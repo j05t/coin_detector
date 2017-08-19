@@ -1,7 +1,7 @@
 # coin_detector
 Detect and count coins in an image
 
-![Screenshot or program output](https://githubusercontent.com/j05t/coin_detector/master/program_output.png)
+![Screenshot](screenshot.png)
 
 
 This is just a proof of concept. The source code is heavily commented, so there is no need for any further explanations here.
