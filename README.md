@@ -27,12 +27,15 @@ unzip opencv.zip
 # Setup Python virtual environment
 sudo pip install virtualenv virtualenvwrapper
 sudo rm -rf ~/get-pip.py ~/.cache/pip
+
 # Update and reload .bashrc
 echo "export WORKON_HOME=$HOME/.virtualenvs" >> ~/.bashrc
 echo "source /usr/local/bin/virtualenvwrapper.sh" >> ~/.bashrc
 source ~/.bashrc
+
 # Create virtual environment
 mkvirtualenv cv -p python3
+
 # Install additional modules
 workon cv
 pip install numpy sklearn scipy matplotlib
@@ -48,8 +51,10 @@ cmake -D CMAKE_BUILD_TYPE=RELEASE \
 -D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib-3.2.0/modules \
 -D PYTHON_EXECUTABLE=~/.virtualenvs/cv/bin/python \
 -D BUILD_EXAMPLES=ON ..
+
 # Build with 4 processes
 make -j4
+
 # Install OpenCV
 sudo make install
 ldconfig
@@ -59,6 +64,7 @@ cd /usr/local/lib/python3.5/site-packages/
 sudo mv cv2.cpython-35m-x86_64-linux-gnu.so cv2.so
 cd ~/.virtualenvs/cv/lib/python3.5/site-packages/
 ln -s /usr/local/lib/python3.5/site-packages/cv2.so cv2.so
+
 # Testing installation: should print '3.2.0'
 workon cv
 python -c "import cv2; print(cv2.__version__)"
