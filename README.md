@@ -69,5 +69,7 @@ rm -rf opencv-3.2.0 opencv_contrib-3.2.0 opencv.zip opencv_contrib.zip
 ```
 
 # Usage
+```
 workon cv
 python detect_coins.py -i input.jpg
+```
